@@ -38,7 +38,7 @@ export default function Weather(props) {
                     <Forecast {...forecastInfo}/>
                     </View>
         </ImageBackground>
-        </View>    
+    </View>    
     );
 }
 const styles = StyleSheet.create({
