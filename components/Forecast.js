@@ -19,7 +19,8 @@ export default function Forecast(props) {
     
     fonts:{ 
         fontSize: 27,
-        height: 50
+        height: 50,
+        
         
     },
     
