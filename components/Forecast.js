@@ -17,7 +17,7 @@ export default function Forecast(props) {
     <Text style = {styles.fonts}>{props.temp} °C</Text>
 
     {/* <Text>°C</Text> */}
-    <TouchableHighlight onPress={() =>{
+    <TouchableHighlight style = {styles.backfont} onPress={() =>{
         navigation.navigate('Other',{zipCode: props.zipCode})
 
     }}>
@@ -32,6 +32,14 @@ export default function Forecast(props) {
         fontSize: 27,
         height: 50,    
     },
+    backfont:{
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: "center",
+        backgroundColor: 'yellow',
+        opacity: 0.7,
+        
+    }
     
 })
 
