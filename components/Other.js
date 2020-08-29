@@ -1,14 +1,41 @@
 import React, { useState, useEffect } from 'react'
 import { StyleSheet, View, ImageBackground, Text } from 'react-native';
+import ForOther from './ForOther';
 
 export default function Other(props){
+    const [ForOtherInfo, setForOtherInfo] = useState({
+        zipCode: props.zipCode,
+        pressure: 0,
+        humidity: 0,
+        visibility: 0,
+        }) 
+    
+        useEffect(() => {
+            console.log(`fetching data(other) with zipCode = ${props.zipCode}`)
+            if (props.zipCode) {
+                    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${props.zipCode},th&units=metric&APPID=17513bfab8f72961e0661eb1808376d2`)
+                        .then((response) => response.json())
+                        .then((json) => {
+                            setForOtherInfo({
+                                pressure: json.main.pressure,
+                                humidity: json.main.humidity,
+                                visibility: json.main.visibility,
+                            });
+                        })
+                        .catch((error) => {
+                            console.warn(error);
+                        });
+                }
+            }, [props.zipCode])
+
     return(
         <View>
         <ImageBackground source={require('../bg.jpeg')} style ={styles.backdrop}>
             <View style = {styles.backfont}>
                 
                     <Text style = {styles.fonts}>Zip Code is {props.zipCode}.</Text>
-                    {/* <Forecast {...forecastInfo}/>  */}
+                    <Text> {props.pressure}</Text>
+                    <ForOther {...ForOtherInfo}/>
             </View>
         </ImageBackground>
     </View>    

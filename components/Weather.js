@@ -9,7 +9,10 @@ export default function Weather(props) {
     zipCode: props.zipCode,
     main: '-',
     description: '-',
-    temp: 0
+    temp: 0,
+    pressure: 0,
+    humidity: 0,
+    visibility: 0,
     }) 
 
     useEffect(() => {
@@ -21,7 +24,10 @@ export default function Weather(props) {
                         setForecastInfo({
                             main: json.weather[0].main,
                             description: json.weather[0].description,
-                            temp: json.main.temp
+                            temp: json.main.temp,
+                            pressure: json.main.pressure,
+                            humidity: json.main.humidity,
+                            visibility: json.main.visibility,
                         });
                     })
                     .catch((error) => {
