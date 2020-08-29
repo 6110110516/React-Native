@@ -1,13 +1,12 @@
 import React from 'react'
 import { Text, View, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { TouchableHighlight } from 'react-native-gesture-handler';
 
 export default function ForOther(props) {
     const navigation = useNavigation()
 
     return (
-    <View style= {{
+    <View  style= {{
         top: 37
     }}>
     <Text style = {styles.fonts}>Pressure :{props.pressure}</Text>

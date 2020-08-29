@@ -9,6 +9,7 @@ export default function Other(props){
         humidity: 0,
         wind: 0,
         }) 
+        
     
         useEffect(() => {
             console.log(`fetching data(other) with zipCode = ${props.zipCode}`)
