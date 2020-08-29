@@ -6,9 +6,7 @@ import { TouchableHighlight } from 'react-native-gesture-handler';
 
 export default function Forecast(props) {
     const navigation = useNavigation()
-
     
-
     return (
     <View style= {{
         top: 37
@@ -17,9 +15,10 @@ export default function Forecast(props) {
     <Text style = {styles.fonts}>{props.description}</Text>
     <View>
     <Text style = {styles.fonts}>{props.temp} °C</Text>
+
     {/* <Text>°C</Text> */}
     <TouchableHighlight onPress={() =>{
-        navigation.navigate('Other',{zipCode: props.code})
+        navigation.navigate('Other',{zipCode: props.zipCode})
 
     }}>
         <Text style = {styles.fonts}>Other</Text>

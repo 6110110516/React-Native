@@ -10,12 +10,10 @@ export default function ForOther(props) {
     <View style= {{
         top: 37
     }}>
-    <Text style = {styles.fonts}>{props.main}</Text>
-    <Text style = {styles.fonts}>{props.description}</Text>
-    <View>
-    <Text style = {styles.fonts}>{props.temp} °C</Text>
+    <Text style = {styles.fonts}>Pressure :{props.pressure}</Text>
+    <Text style = {styles.fonts}>Humidity :{props.humidity}</Text>
+    <Text style = {styles.fonts}>Wind Speed :{props.wind}</Text>
     
-    </View>
     </View>
     );
    }

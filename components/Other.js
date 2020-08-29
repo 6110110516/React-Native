@@ -3,11 +3,11 @@ import { StyleSheet, View, ImageBackground, Text } from 'react-native';
 import ForOther from './ForOther';
 
 export default function Other(props){
-    const [ForOtherInfo, setForOtherInfo] = useState({
-        zipCode: props.zipCode,
+    const [forOtherInfo, setForOtherInfo] = useState({
+        ziCode: '-',
         pressure: 0,
         humidity: 0,
-        visibility: 0,
+        wind: 0,
         }) 
     
         useEffect(() => {
@@ -17,9 +17,10 @@ export default function Other(props){
                         .then((response) => response.json())
                         .then((json) => {
                             setForOtherInfo({
+                                ziCode: props.zipCode,
                                 pressure: json.main.pressure,
                                 humidity: json.main.humidity,
-                                visibility: json.main.visibility,
+                                wind: json.wind.speed,
                             });
                         })
                         .catch((error) => {
@@ -35,7 +36,7 @@ export default function Other(props){
                 
                     <Text style = {styles.fonts}>Zip Code is {props.zipCode}.</Text>
                     <Text> {props.pressure}</Text>
-                    <ForOther {...ForOtherInfo}/>
+                    <ForOther {...forOtherInfo}/>
             </View>
         </ImageBackground>
     </View>    
