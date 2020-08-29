@@ -47,7 +47,7 @@ export default function Weather(props) {
         <ImageBackground source={require('../bg.jpeg')} style ={styles.backdrop}>
             <View style = {styles.backblue}>
                 
-                    <Text style = {styles.fonts}>Zip Code is {forecastInfo.temp}.</Text>
+                    <Text style = {styles.fonts}>Zip Code is {props.zipCode}.</Text>
                     <Forecast {...forecastInfo}/> 
             </View>  
         </ImageBackground>
@@ -59,7 +59,7 @@ export default function Weather(props) {
             <ImageBackground source={require('../bg.jpeg')} style ={styles.backdrop}>
                 <View style = {styles.backred}>
                     
-                        <Text style = {styles.fonts}>Zip Code is {forecastInfo.temp}.</Text>
+                        <Text style = {styles.fonts}>Zip Code is {props.zipCode}.</Text>
                         <Forecast {...forecastInfo}/> 
                 </View>  
             </ImageBackground>
@@ -71,7 +71,7 @@ export default function Weather(props) {
             <ImageBackground source={require('../bg.jpeg')} style ={styles.backdrop}>
                 <View style = {styles.backorange}>
                     
-                        <Text style = {styles.fonts}>Zip Code is {forecastInfo.temp}.</Text>
+                        <Text style = {styles.fonts}>Zip Code is {props.zipCode}.</Text>
                         <Forecast {...forecastInfo}/> 
                 </View>  
             </ImageBackground>
